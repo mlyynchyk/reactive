@@ -46,6 +46,16 @@ public class UserService implements ReactiveUserDetailsService {
                 );
     }
 
+    public Flux<User> findAllWithRoles() {
+        return userRepository.findAll()
+                .concatMap(user -> getAuthorities(user.getId())
+                        .collectList()
+                        .map(authorities -> {
+                            user.setAuthorities(new HashSet<>(authorities));
+                            return user;
+                        }));
+    }
+
     /**
      * Реєстрація нового користувача з роллю ROLE_User.
      * Повертає порожній Mono, якщо логін уже зайнятий.

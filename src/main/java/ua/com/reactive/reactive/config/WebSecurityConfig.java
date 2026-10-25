@@ -43,10 +43,10 @@ public class WebSecurityConfig {
 
         return http.csrf(csrf -> csrf.disable())
                 .authorizeExchange(exchange ->
-                        exchange.pathMatchers("/", "/registration")
+                        exchange.pathMatchers("/", "/registration", "/api/register")
                                 .permitAll()
                                 .pathMatchers("/users").hasRole("User")
-                                .pathMatchers("/admin").hasRole("Admin")
+                                .pathMatchers("/admin", "/api/admin/**").hasRole("Admin")
                                 .anyExchange().authenticated()
                 )
                 .formLogin(withDefaults())

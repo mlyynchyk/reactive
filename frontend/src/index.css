@@ -1,0 +1,58 @@
+body {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.hero {
+  background: linear-gradient(135deg, #0d3b66 0%, #1d6fa5 55%, #2a9d8f 100%);
+}
+
+.stat-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bs-box-shadow) !important;
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-primary-text-emphasis);
+  flex-shrink: 0;
+}
+
+.auth-wrapper {
+  max-width: 420px;
+  margin: 3rem auto;
+}
+
+.table-row-muted td {
+  color: var(--bs-secondary-color);
+}
+
+.status-select {
+  min-width: 130px;
+  font-weight: 500;
+}
+
+.status-pending   { color: var(--bs-warning-text-emphasis); background-color: var(--bs-warning-bg-subtle); }
+.status-completed { color: var(--bs-success-text-emphasis); background-color: var(--bs-success-bg-subtle); }
+.status-failed    { color: var(--bs-danger-text-emphasis);  background-color: var(--bs-danger-bg-subtle); }
+.status-cancelled { color: var(--bs-secondary-color);       background-color: var(--bs-secondary-bg); }
